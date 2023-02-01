@@ -15,9 +15,9 @@ function doFirst(){
   
   
  //先畫矩形，再描邊!!
-  
-  context.stroke();
   context.fill();
+  context.stroke();
+
   
   
 
