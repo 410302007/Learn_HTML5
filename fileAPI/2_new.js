@@ -3,7 +3,7 @@ function doFirst(){
   document.getElementById('theFile').onchange = fileChange
 }
 function fileChange(){
-  let file = document.getElementById('theFile').files[0]
+  let file = document.getElementById('theFile').files[0] //files[0]->指定某個檔案
   // console.log(file);
   let message = ``
   message += `File name: ${file.name}\n`
