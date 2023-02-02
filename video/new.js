@@ -1,12 +1,19 @@
 function doFirst(){
+  
   //先跟畫面產生關聯
   myMovie = document.getElementById('myMovie')
   playButton = document.getElementById('playButton')
   defaultBar = document.getElementById('defaultBar')
   progress = document.getElementById('progress')
 
+  //barsize->progress的width
+  barsize = parseInt(getComputedStyle(defaultBar).width)
+  // barsize = defaultBar.style.width->抓不到屬性
+  // alert(barsize)
+
   //再建事件聆聽功能
   playButton.addEventListener('click',playOrPause)
+  myMovie.addEventListener('click',playOrPause) //點選影片->播放/暫停; 與播放按鈕同功能
   defaultBar.addEventListener('click',clickedBar)
 
   //全螢幕
@@ -22,9 +29,23 @@ function playOrPause(){
     playButton.innerText='play'
   //影片結束或暫停
   }else{
-    myMovie.play()
+    myMovie.play()  //影片播放中時，螢幕顯示pause
     playButton.innerText ='pause'
+    setInterval(update,300) //每300毫秒更新一次 //也可使用setTimeOut
   }
 }
-function clickedBar(){}
+function update(){
+  if(!myMovie.ended){
+    let size = barsize / myMovie.duration * myMovie.currentTime //barsize->progress
+    progress.style.width = `${size}px`
+  }else{
+    progress.style.width = `0px`
+    playButton.innerText='play'
+    myMovie.currentTime = 0
+  }
+
+}
+function clickedBar(){
+
+}
 window.addEventListener('load',doFirst)

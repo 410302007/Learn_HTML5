@@ -1,0 +1,33 @@
+#skin{
+    border: 3px dashed steelblue;
+    border-radius: 10px;
+    width: 700px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 15px 0px;
+
+}
+nav{
+    /* border: 1px solid red; */
+    margin-top: 10px;
+}
+button{
+    text-transform: capitalize;
+    font: 16px Tahoma;
+    width: 125px;
+}
+#defaultBar{
+    border: 1px solid #aaa;
+    width: 636px;
+    height: 20px;
+    padding: 2px;
+
+    margin-top: 10px;
+    position: relative;
+    left: 29px;
+}
+#progress{
+    width: 0px;
+    height: 20px;
+    background: #aaa;
+}
