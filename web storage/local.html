@@ -8,6 +8,7 @@
     <button onclick="action()">Click</button>
     
     <script>
+      //local storage關掉頁面，下次打開頁面，資料依舊存在
       function action(){
         if(localStorage['username'] == null){
           let name = prompt(`What is your username?`) //跳出視窗
