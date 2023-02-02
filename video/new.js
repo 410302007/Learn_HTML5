@@ -45,7 +45,11 @@ function update(){
   }
 
 }
-function clickedBar(){
+function clickedBar(e){
+  let mouseX = e.clientX - defaultBar.offsetLeft //
+  progress.style.width = `${mouseX}px`
 
+  let newTime = mouseX / (barsize / myMovie.duration)
+  myMovie.currentTime = newTime
 }
 window.addEventListener('load',doFirst)
