@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>session storage</title>
+</head>
+<body>
+    <button onclick="action()">Click</button>
+
+    <script>
+        function action(){
+            if(sessionStorage['username'] == null){
+                //跳出視窗
+                let name = prompt(`What is your username?`)
+                sessionStorage['username'] = name
+            }else{
+                alert(sessionStorage['username'])
+            }
+        }
+    </script>
+</body>
+</html>
