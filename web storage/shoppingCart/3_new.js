@@ -62,9 +62,19 @@ function doFirst(){
          storage[itemId] = itemValue //=> storage.setItem(itemId, itemValue)
       }
    }
-   //計算購買數量和小計
-   //docuemt.getElementByID('itemCount').innerText = 
-   //docuemt.getElementByID('subtotal').innerText = 
+   // 計算購買數量和小計
+   let itemString = storage.getItem('addItemList')
+   let items = itemString.substring(0, itemString.length - 2).split(', ')
+   console.log(items);   // ['A1001', 'A1005', 'A1006', 'A1002']
 
+   subtotal = 0
+   for(let i = 0; i < items.length; i++){
+       let itemInfo = storage.getItem(items[i])
+       subtotal += parseInt(itemInfo.split('|')[2])
+   }
+
+
+   document.getElementById('itemCount').innerText = items.length
+   document.getElementById('subtotal').innerText = subtotal
 }
 window.addEventListener('load', doFirst);
