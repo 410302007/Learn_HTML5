@@ -60,6 +60,14 @@ function doFirst(){
     trItemList.appendChild(tdTitle)
 
     // 建立商品價格 -- 第三個 td
+    let tdPrice = document.createElement('td')
+    tdPrice.style.width = `170px`
+
+    let pPrice = document.createElement('p')
+    pPrice.innerText = itemPrice
+    
+    tdPrice.appendChild(pPrice)
+    trItemList.appendChild(tdPrice)
 
     // 建立商品數量 -- 第四個 td
   }
