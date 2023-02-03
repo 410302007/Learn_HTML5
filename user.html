@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>會員</title>
+  <style>
+    .menu{
+      list-style:none;
+      padding-inline-start: 20px;
+    }
+    .bold{
+      font-weight:900;
+      font-size: 18px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+  <script>
+    $(document).ready(function(){
+      //以下為尋找menu裡第一個li(Welcome Username!)
+      // $('.menu li:nth-child(1)').處理() //用css的selector找menu第一個li
+      // $('.menu li:eq(0)').處理()  //找menu第一個li
+      // $('.menu li:first').處理()  //找menu第一個li
+      // $('.menu').find('li').first().處理() //找menu第一個li
+      
+      //step 1.
+      // $('.menu').find('li').first().addClass('bold')
+
+      //step 2.
+      // $('.menu').find('li').first().addClass('bold').nextAll().hide()
+
+      //step 3.
+      // $('.menu').find('li').first().addClass('bold').click(function(){}).nextAll().hide()
+
+      //step 4.
+      $('.menu').find('li').first().addClass('bold').click(function(){
+        // $(this).nextAll().show()
+        $(this).nextAll().toggle()
+      }).nextAll().hide()
+    })
+  </script>
+</head>
+<body>
+    <ul class="menu">
+      <li>Welcome Username ! </li>
+      <li>會員資料</li>
+      <li>收藏列表</li>
+      <li>訂單紀錄</li>
+      <li>登出</li>
+    </ul>
+</body>
+</html>
