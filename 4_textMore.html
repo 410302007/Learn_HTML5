@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="0_style.css">
+  <title>Scalable Vector Graphics</title>
+  <style>
+    svg,p{
+      font-size: 5px;
+    }
+  </style>
+</head>
+<body>
+  <p>This is a SVG text</p>
+    <svg viewbox="0 0 100 100">
+    <text x="10" y="10">This is 5px SVG text
+    </text>
+    </svg>
+</body>
+</html>
+
+svg 的 viewbox
+<svg viewbox="min-x min-y width height"></svg>
+
+<!-- min-x: 0 by default
+min-y: 0 by default
+width: svg的寬 by default
+height: svg的高 by default -->
