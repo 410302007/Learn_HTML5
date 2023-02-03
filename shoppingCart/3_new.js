@@ -13,7 +13,30 @@ function doFirst(){
       }) 
    }
    function addItem(itemId, itemValue){
-      alert(`${itemId}: ${itemValue}`)
+      // alert(`${itemId}: ${itemValue}`)
+      //-> A1001: Formosa|formosa.jpg|5000
+      //itemId(Formosa|formosa.jpg|5000)
+
+      //先建img標籤
+      let image = document.createElement('img')
+      //	<img src="imgs/formosa.jpg">
+      image.src = 'imgs/' + itemValue.split('|')[1]
+
+      //先建title標籤
+      let title = document.createElement('span')
+      title.innerText=  itemValue.split('|')[0]
+
+      //先建price標籤
+      let price = document.createElement('span')
+      price.innerText=  itemValue.split('|')[2]
+      
+      //找到爸爸-> 加進去(addItem)
+      let newItem = document.getElementById('newItem')
+      newItem.appendChild(image)
+      newItem.appendChild(title)
+      newItem.appendChild(price)
+
+    
    }
 }
 window.addEventListener('load', doFirst);
