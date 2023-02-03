@@ -30,8 +30,15 @@ function doFirst(){
       let price = document.createElement('span')
       price.innerText=  itemValue.split('|')[2]
       
-      //找到爸爸-> 加進去(addItem)
+      //找到爸爸('newItem')-> 加進去(addItem)
       let newItem = document.getElementById('newItem')
+      //先判斷此處是否已有物件，如果有要先刪除
+      // alert(newItem.childNodes.length)
+      while(newItem.childNodes.length >= 1 ){
+         newItem.removeChild(newItem.firstChild)
+      }
+
+      //再顯示新物件
       newItem.appendChild(image)
       newItem.appendChild(title)
       newItem.appendChild(price)
