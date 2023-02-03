@@ -1,5 +1,14 @@
 let storage = localStorage
 function doFirst(){
+   
+   if(storage['addItemList'] == null){
+   //資料儲存區顯示空字串
+   storage['addItemList'] = ''
+   // storage.addItemList = ''
+   // storage.setItem('addItemList', '')
+   }
+   
+
    //1.幫每個 Add  cart 建事件聆聽
    let list = document.querySelectorAll('.addButton') //class 使用. ; id->使用# //list為陣列
    for(let i = 0; i < list.length; i++){
@@ -43,7 +52,19 @@ function doFirst(){
       newItem.appendChild(title)
       newItem.appendChild(price)
 
-    
+      //存入storage
+      if(storage[itemId]){
+         alert('You have checked.') //若storage裡已有這筆id-> alert
+      }else{
+         //storage裡沒有這筆，加進去並轉換為字串
+         storage['addItemList'] += `${itemId}, `
+         // 將資料存到 storage
+         storage[itemId] = itemValue //=> storage.setItem(itemId, itemValue)
+      }
    }
+   //計算購買數量和小計
+   //docuemt.getElementByID('itemCount').innerText = 
+   //docuemt.getElementByID('subtotal').innerText = 
+
 }
 window.addEventListener('load', doFirst);
